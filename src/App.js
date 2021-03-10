@@ -1,10 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import React , { useState, useEffect } from "react";
 
 function App() {
+  const [timer, setTimer] = useState(0);
+
+  useEffect(() => {
+    setInterval(() => {
+      setTimer(timer => timer + 1)
+    }, 1000)
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Countdown: { timer }</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
