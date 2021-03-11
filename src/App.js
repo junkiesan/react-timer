@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import useCatCall from './useCatCall';
+import useDateToday from './useDateToday';
 import React , { useState, useEffect } from "react";
 
 function App() {
@@ -25,14 +26,8 @@ function App() {
         { newCat && 
           <img className="cat" src={newCat} alt="cat"/>
         }
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>{ useDateToday() === "Saturday" || "Sunday" ?
+        "Wow already the weekend ?" : "It's week time !"}</h1>
       </header>
     </div>
   );
