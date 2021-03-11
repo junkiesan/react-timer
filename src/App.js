@@ -4,8 +4,15 @@ import React , { useState, useEffect } from "react";
 
 function App() {
   const [timer, setTimer] = useState(0);
+  const [response, setResponse] = useState(null);
 
   useEffect(() => {
+
+    fetch('https://api.thecatapi.com/v1/images/search')
+    .then((response) => response.json())
+    .then((data) => {
+      setResponse(data[0].url)
+    })
     const intervalID = setInterval(() => {
       setTimer(timer => timer + 1)
     }, 1000)
