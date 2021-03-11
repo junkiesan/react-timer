@@ -26,9 +26,9 @@ function App() {
       <header className="App-header">
         <h1>Time on page: { timer }</h1>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        { response && 
+          <img src={response} alt="cat"/>
+        }
         <a
           className="App-link"
           href="https://reactjs.org"
